@@ -42,6 +42,12 @@ class WiderFaceDetection(data.Dataset):
         height, width, _ = img.shape
 
         labels = self.words[index]
+        # 每个data的对应标签有15个数据
+        # 每个annotation是一个(1,15)的行向量
+        # 前4个是bbox相关的，之后一直到13都是landmark相关的，最后是groundtruth标签，是为1，不是为-1
+        # TODO: 添加口罩标签
+        # 目前想到了两种做法，一种是根据path判断是否为口罩图片
+        # 另一个是用其他工具手工给图片加上口罩
         annotations = np.zeros((0, 15))
         if len(labels) == 0:
             return annotations

@@ -1,0 +1,8 @@
+data/FaceMaskDataset
+data/widerface
+data/FDDB
+widerface_evaluate/widerface_txt
+tfevent
+__pycache__
+weights
+widerface_evaluate/build

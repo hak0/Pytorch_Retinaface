@@ -97,6 +97,7 @@ if __name__ == '__main__':
     # testing begin
     for i, img_name in enumerate(test_dataset):
         image_path = testset_folder + img_name
+        print(image_path)
         img_raw = cv2.imread(image_path, cv2.IMREAD_COLOR)
         img = np.float32(img_raw)
 
